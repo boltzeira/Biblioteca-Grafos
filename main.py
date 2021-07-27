@@ -1,5 +1,4 @@
 import os
-import time
 import fun_matriz
 import fun_lista
 
@@ -13,7 +12,7 @@ while not ch:
     if not ch: # verfica se o arquivo existe
         print("\nInfelizmente não foi possivel encontrar esse arquivo, tente novamente com um nome valido")
         espera = input('\t...aperte enter para continuar...\n')
-arquivo = open(entrada, 'r')
+arquivo = open(entrada, 'r') # abrir arquivo para leitura
 
 print('\n\tEscolha o tipo de representação do grafo:')
 chave = input('\t\t(1 para lista de adjacencias  /  2 para matriz de adjacencias) -> ')
@@ -34,6 +33,7 @@ else:
             print('\t', item)
     else:
         print('\tDesculpe, é inviavel imprimir este grafo')
+arquivo.close() #fechar arquivo
 
 print('-Numero de vertices:', saida.num_vertices)
 print('-Numero de arestas:', saida.num_arestas)
@@ -50,4 +50,3 @@ print('-Tempo de execução de todas as funcionalidades :',  saida.tempo_total)
 print('-Tempo de execução na criação da representação :',  saida.tempo_cria_representacao)
 print('-Tempo de execução de busca largura :',  saida.tempo_largura)
 print('-Tempo de execução de busca profundidade :',  saida.tempo_profundidade)
-fim = input()
